@@ -12,7 +12,6 @@ public class MoodAnalyser {
 	 * @return:None
 	 */
 	public MoodAnalyser() {
-		System.out.println("Default Constructor");
 	}
 
 	/*
