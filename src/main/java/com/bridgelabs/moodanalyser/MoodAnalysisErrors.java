@@ -3,7 +3,7 @@ package com.bridgelabs.moodanalyser;
 /*
  * @Description: This is a enum class for mood analysis errors.
  * 
- * @Constants: EMPTY_MESSAGE, NULL_MESSAGE  
+ * @Constants: EMPTY_MESSAGE, NULL_MESSAGE
  */
 public enum MoodAnalysisErrors {
 	EMPTY_MESSAGE("Empty String"), NULL_MESSAGE("Mood is Null");
