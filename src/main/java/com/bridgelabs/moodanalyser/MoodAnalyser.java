@@ -12,7 +12,7 @@ public class MoodAnalyser {
 	 * @return-None
 	 */
 	public MoodAnalyser() {
-		System.out.print("Default Constructor");
+		System.out.println("Default Constructor");
 	}
 
 	/*
@@ -29,16 +29,19 @@ public class MoodAnalyser {
 	/*
 	 * @Description- This method is used to analyse mood of the user
 	 * 
-	 * @param- String message
+	 * @param- None
 	 * 
 	 * @return-String mood
 	 */
 
 	public String analyseMood() {
-		if (message.contains("Sad"))
-			return "SAD";
-		else
+		try {
+			if (message.contains("Sad"))
+				return "SAD";
+			else
+				return "HAPPY";
+		} catch (NullPointerException e) {
 			return "HAPPY";
+		}
 	}
-
 }
