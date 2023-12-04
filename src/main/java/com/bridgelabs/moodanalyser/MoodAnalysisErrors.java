@@ -22,7 +22,7 @@ public enum MoodAnalysisErrors {
 	}
 
 	/*
-	 * @Description: This is a method to get message.
+	 * @Description: This is a method to get the error message.
 	 * 
 	 * @param: None
 	 * 
