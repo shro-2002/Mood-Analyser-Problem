@@ -17,7 +17,7 @@ public enum MoodAnalysisErrors {
 	 * 
 	 * @return: None
 	 */
-	MoodAnalysisErrors(String message) {
+	private MoodAnalysisErrors(String message) {
 		this.message = message;
 	}
 
