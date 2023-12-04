@@ -5,22 +5,22 @@ public class MoodAnalyser {
 	private String message;
 
 	/*
-	 * @Description- Default Constructor
+	 * @Description: Default Constructor
 	 * 
-	 * @param- None
+	 * @param: None
 	 * 
-	 * @return-None
+	 * @return:None
 	 */
 	public MoodAnalyser() {
 		System.out.println("Default Constructor");
 	}
 
 	/*
-	 * @Description- Parameterized Constructor to initialize message
+	 * @Description: Parameterized Constructor to initialize message
 	 * 
-	 * @param- String message
+	 * @param: String message
 	 * 
-	 * @return-None
+	 * @return:None
 	 */
 	public MoodAnalyser(String message) {
 		this.message = message;
@@ -34,14 +34,19 @@ public class MoodAnalyser {
 	 * @return-String mood
 	 */
 
-	public String analyseMood() {
+	public String analyseMood() throws MoodAnalysisException {
 		try {
+			if (message.length() == 0)
+				throw new MoodAnalysisException(MoodAnalysisErrors.EMPTY_MESSAGE);
+
 			if (message.contains("Sad"))
 				return "SAD";
 			else
 				return "HAPPY";
-		} catch (NullPointerException e) {
-			return "HAPPY";
+		}
+
+		catch (NullPointerException e) {
+			throw new MoodAnalysisException(MoodAnalysisErrors.NULL_MESSAGE);
 		}
 	}
 }

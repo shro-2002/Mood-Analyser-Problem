@@ -5,23 +5,46 @@ public class MoodAnalyserMain {
 	public static void main(String[] args) {
 		System.out.println("Welcome to Mood Analyser Program");
 
-		MoodAnalyser moodAnalyser1 = new MoodAnalyser("I am in Sad Mood");
-		MoodAnalyser moodAnalyser2 = new MoodAnalyser("I am in Any Mood");
-		MoodAnalyser moodAnalyser3 = new MoodAnalyser();
+		MoodAnalyser moodAnalyser;
+		String mood;
 
 		// TC-1.1
 
-		String mood = moodAnalyser1.analyseMood();
-		System.out.println(mood);
+		try {
+			moodAnalyser = new MoodAnalyser("I am in Sad Mood");
+			mood = moodAnalyser.analyseMood();
+			System.out.println(mood);
+		} catch (MoodAnalysisException e) {
+			System.out.println("Exception: " + e.getMessage());
+		}
 
 		// TC-1.2
+		try {
+			moodAnalyser = new MoodAnalyser("I am in Any Mood");
+			mood = moodAnalyser.analyseMood();
+			System.out.println(mood);
+		} catch (MoodAnalysisException e) {
+			System.out.println("Exception: " + e.getMessage());
+		}
 
-		String mood1 = moodAnalyser2.analyseMood();
-		System.out.println(mood1);
+		// TC-3.1
+		try {
+			moodAnalyser = new MoodAnalyser();
+			mood = moodAnalyser.analyseMood();
+			System.out.println(mood);
+		} catch (MoodAnalysisException e) {
 
-		// TC-2.1
-		String mood3 = moodAnalyser3.analyseMood();
-		System.out.println(mood3);
+			System.out.println("Exception: " + e.getMessage());
+		}
+
+		// TC-3.2
+		try {
+			moodAnalyser = new MoodAnalyser("");
+			mood = moodAnalyser.analyseMood();
+			System.out.println(mood);
+		} catch (MoodAnalysisException e) {
+			System.out.println("Exception: " + e.getMessage());
+		}
 	}
 
 }
